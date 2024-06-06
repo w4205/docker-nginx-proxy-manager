@@ -68,8 +68,8 @@ app:
 
           | Traffic type | Container port | Host port mapped to container | External port | Internal port | Internal IP address                           |
           |--------------|----------------|-------------------------------|---------------|---------------|-----------------------------------------------|
-          | HTTP         | 8080           | XXXX                          | 80            | XXXX          | IP address of the host running the container. |
-          | HTTPs        | 4443           | YYYY                          | 443           | YYYY          | IP address of the host running the container. |
+          | HTTP         | 8081           | XXXX                          | 80            | XXXX          | IP address of the host running the container. |
+          | HTTPs        | 8443          | YYYY                          | 443           | YYYY          | IP address of the host running the container. |
 
           `XXXX` and `YYYY` are configurable port values.  Unless they conflict with other
           used ports on the host, they can simply be set to the same value as the
@@ -418,7 +418,7 @@ container:
         display: always
         required: true
         mask: false
-    - number: 8080
+    - number: 8081
       protocol: tcp
       description: >-
         Port used to serve HTTP requests.
@@ -435,7 +435,7 @@ container:
         display: always
         required: true
         mask: false
-    - number: 4443
+    - number: 8443
       protocol: tcp
       description: >-
         Port used to serve HTTPs requests.

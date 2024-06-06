@@ -54,8 +54,8 @@ Launch the Nginx Proxy Manager docker container with the following command:
 docker run -d \
     --name=nginx-proxy-manager \
     -p 8181:8181 \
-    -p 8080:8080 \
-    -p 4443:4443 \
+    -p 8081:8081 \
+    -p 8443:8443 \
     -v /docker/appdata/nginx-proxy-manager:/config:rw \
     jlesage/nginx-proxy-manager
 ```
@@ -169,8 +169,8 @@ documentation for more details.
 | Port | Protocol | Mapping to host | Description |
 |------|----------|-----------------|-------------|
 | 8181 | TCP | Mandatory | Port used to access the web interface of the application. |
-| 8080 | TCP | Mandatory | Port used to serve HTTP requests. |
-| 4443 | TCP | Mandatory | Port used to serve HTTPs requests. |
+| 8081 | TCP | Mandatory | Port used to serve HTTP requests. |
+| 8443 | TCP | Mandatory | Port used to serve HTTPs requests. |
 
 ### Changing Parameters of a Running Container
 
@@ -215,8 +215,8 @@ services:
     image: jlesage/nginx-proxy-manager
     ports:
       - "8181:8181"
-      - "8080:8080"
-      - "4443:4443"
+      - "8081:8081"
+      - "8443:8443"
     volumes:
       - "/docker/appdata/nginx-proxy-manager:/config:rw"
 ```
@@ -376,8 +376,8 @@ to be forwarded:
 
 | Traffic type | Container port | Host port mapped to container | External port | Internal port | Internal IP address                           |
 |--------------|----------------|-------------------------------|---------------|---------------|-----------------------------------------------|
-| HTTP         | 8080           | XXXX                          | 80            | XXXX          | IP address of the host running the container. |
-| HTTPs        | 4443           | YYYY                          | 443           | YYYY          | IP address of the host running the container. |
+| HTTP         | 8081           | XXXX                          | 80            | XXXX          | IP address of the host running the container. |
+| HTTPs        | 8443           | YYYY                          | 443           | YYYY          | IP address of the host running the container. |
 
 `XXXX` and `YYYY` are configurable port values.  Unless they conflict with other
 used ports on the host, they can simply be set to the same value as the

@@ -130,10 +130,10 @@ ENV \
     DISABLE_IPV6=0
 
 # Expose ports.
-#   - 8080: HTTP traffic
-#   - 4443: HTTPs traffic
+#   - 8081: HTTP traffic
+#   - 8443: HTTPs traffic
 #   - 8181: Management web interface
-EXPOSE 8080 4443 8181
+EXPOSE 8081 8443 8181
 
 # Metadata.
 LABEL \

@@ -149,12 +149,12 @@ sed -i 's|listen 80;|listen 8080;|' $ROOTFS/opt/nginx-proxy-manager/templates/_l
 sed -i 's|:80;|:8080;|' $ROOTFS/opt/nginx-proxy-manager/templates/_listen.conf
 sed -i 's|80 default;|8080 default;|' $ROOTFS/opt/nginx-proxy-manager/templates/default.conf
 
-# Change the HTTPs port 443 to the unprivileged port 4443.
-sed -i 's|443 |4443 |' $ROOTFS/etc/nginx/conf.d/default.conf
-sed -i 's|"443";|"4443";|' $ROOTFS/etc/nginx/conf.d/default.conf
-sed -i 's|listen 443 |listen 4443 |' $ROOTFS/opt/nginx-proxy-manager/templates/_listen.conf
-sed -i 's|:443 |:4443 |' $ROOTFS/opt/nginx-proxy-manager/templates/_listen.conf
-sed -i 's|:443;|:4443;|' $ROOTFS/opt/nginx-proxy-manager/templates/_listen.conf
+# Change the HTTPs port 443 to the unprivileged port 8443.
+sed -i 's|443 |8443 |' $ROOTFS/etc/nginx/conf.d/default.conf
+sed -i 's|"443";|"8443";|' $ROOTFS/etc/nginx/conf.d/default.conf
+sed -i 's|listen 443 |listen 8443 |' $ROOTFS/opt/nginx-proxy-manager/templates/_listen.conf
+sed -i 's|:443 |:8443 |' $ROOTFS/opt/nginx-proxy-manager/templates/_listen.conf
+sed -i 's|:443;|:8443;|' $ROOTFS/opt/nginx-proxy-manager/templates/_listen.conf
 
 # Fix nginx test command line.
 sed -i 's|-g "error_log off;"||' $ROOTFS/opt/nginx-proxy-manager/internal/nginx.js

@@ -32,8 +32,8 @@ Launch the Nginx Proxy Manager docker container with the following command:
 docker run -d \
     --name=nginx-proxy-manager \
     -p 8181:8181 \
-    -p 8080:8080 \
-    -p 4443:4443 \
+    -p 8081:8081 \
+    -p 8443:8443 \
     -v /docker/appdata/nginx-proxy-manager:/config:rw \
     jlesage/nginx-proxy-manager
 ```
